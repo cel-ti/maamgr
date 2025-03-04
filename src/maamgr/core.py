@@ -126,6 +126,7 @@ class MaaMgr:
 
 
     def patchValue(self, path : str, key : str, value : any):
+        path = self._parsePath(path)
         data = load(path)
         key = key.split("/") if "/" in key else [key]
         set_deep(data, *key, value)

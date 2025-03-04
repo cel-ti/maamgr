@@ -3,12 +3,13 @@ import click
 from maamgr.core import MaaMgr
 from pprint import pprint
 @click.group(invoke_without_command=True)
-@click.argument("name", type=str)
+@click.argument("name", type=str, required=False)
 @click.option("-u", "--update", is_flag=True, help="Check for update")
 @click.pass_context
 def cli(ctx, name, update):
     MaaMgr.init(auto_update=update)
-    ctx.obj = MaaMgr(name)
+    if name:
+        ctx.obj = MaaMgr(name)
 
 @cli.command()
 @click.pass_context
