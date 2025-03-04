@@ -14,5 +14,5 @@ click==8.1.8
     # via maamgr
 colorama==0.4.6
     # via click
-zuu==7.2.0
+zuu==7.3.0
     # via maamgr

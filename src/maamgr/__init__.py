@@ -27,7 +27,8 @@ def start(ctx, path):
 @cli.command()
 @click.argument("args", type=str, nargs=-1)
 @click.pass_context
-def patch(ctx, *args):
+def patch(ctx, args):
+    print(args)
     for arg in args:
         if "->" not in arg:
             raise click.UsageError("Invalid argument: " + arg + " <must be in the format 'source->destination'>")
