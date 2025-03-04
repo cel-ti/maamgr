@@ -134,7 +134,11 @@ class MaaMgr:
 
     def call(self, path : str, *args):
         path = self._parsePath(path)
+        curr_dir = os.getcwd()
+        os.chdir(os.path.dirname(path))
         subprocess.run([path, *args])
+        os.chdir(curr_dir)
+
 
 
 
