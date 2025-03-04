@@ -119,7 +119,7 @@ class MaaMgr:
             else:
                 if rightpath not in cumulative_save:
                     cumulative_save[rightpath] = cached_file(rightpath)
-                set_deep(cumulative_save[rightpath], *rightkey, leftdata)
+                set_deep(cumulative_save[rightpath], *rightkey, value=leftdata)
     
         for path, data in cumulative_save.items():
             save(data, path)
@@ -129,7 +129,7 @@ class MaaMgr:
         path = self._parsePath(path)
         data = load(path)
         key = key.split("/") if "/" in key else [key]
-        set_deep(data, *key, value)
+        set_deep(data, *key, value=value)
         save(data, path)
 
     def call(self, path : str, *args):
