@@ -1,6 +1,6 @@
 [project]
 name = "maamgr"
-version = "0.2.2"
+version = "0.2.3"
 description = "Maa based apps Manager"
 authors = [
     { name = "cel-ti", email = "96926560+cel-ti@users.noreply.github.com" }
